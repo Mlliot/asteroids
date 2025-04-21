@@ -12,7 +12,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class ObjectsComponent implements OnInit{
   
-  objectService = inject(ObjectService);
+  service = inject(ApiService);
   objects: any;
 
   listOfObjects: Signal<any> = signal(0);
@@ -24,8 +24,8 @@ export class ObjectsComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.objectService.getObjects().subscribe( obj => {
-      // this.objects = obj.map();
+    this.service.getNeoToday().subscribe( obj => {
+      this.objects = obj;
       console.log(this.objects);
     });
   }

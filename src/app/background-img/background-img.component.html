@@ -1,5 +1,9 @@
-<div *ngIf="apodData">
-      <h1>{{ apodData.title }}</h1>
-      <img class = "img" [src]="apodData.url" alt="{{ apodData.title }}">
-      <p>{{ apodData.explanation }}</p>
-</div>
+@if(apodData){
+
+      <div class="coloredBackground"><h1>Nasa Near Earth Objects</h1></div>
+      <div class="center coloredBackground"><p>{{ apodData.explanation }}</p></div>
+
+    <div class="absolute">
+        <img class = "img" [src]="imageSrc" alt="{{ apodData.title }}">
+    </div>
+}

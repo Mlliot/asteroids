@@ -5,5 +5,27 @@ h1 {
 .img {
     height:100%;
     width:100%;
+    filter: blur(10px);
+}
 
+.absolute{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    width: 100vw;
+}
+
+.center{
+    position: absolute;
+    top: 40vh;
+    right: 0px;
+    max-width: 35%;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+.coloredBackground {
+    background-color: rgba(255, 255, 255, 0.11);
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
@@ -15,12 +15,17 @@ export class BackgroundImgComponent {
 
   constructor( private apiService: ApiService) { }
 
+  imageSrc: any;
+
+  imageOut = output();
   // Starts up api call and subscribes to get data
   ngOnInit(): void {
     console.log('hi')
     this.apiService.getToday().subscribe(data => {
       console.log(data)
       this.apodData = data;
+      this.imageSrc = this.apodData.url;
+      this.imageOut.emit(this.imageSrc);
     });
   }
 
