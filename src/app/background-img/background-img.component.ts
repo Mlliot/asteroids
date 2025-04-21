@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, output, inject } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
@@ -11,21 +11,32 @@ import { CommonModule } from '@angular/common';
   styleUrl: './background-img.component.css'
 })
 export class BackgroundImgComponent {
+  key: string = '';
+  service = inject(ApiService);
+  apiResponse: any
   apodData: any
 
-  constructor( private apiService: ApiService) { }
+  myArr: string[] = new Array()
+
+  constructor(private apiService: ApiService) { }
 
   imageSrc: any;
 
   imageOut = output();
   // Starts up api call and subscribes to get data
+  // ngOnInit(): void {
+  //   console.log('hi')
+  //   this.apiService.getToday().subscribe(data => {
+  //     console.log(data)
+  //     this.apodData = data;
+  //   });
+  // }
+
   ngOnInit(): void {
     console.log('hi')
     this.apiService.getToday().subscribe(data => {
       console.log(data)
       this.apodData = data;
-      this.imageSrc = this.apodData.url;
-      this.imageOut.emit(this.imageSrc);
     });
   }
 
