@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { Injectable } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

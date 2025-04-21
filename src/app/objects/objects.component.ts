@@ -25,7 +25,7 @@ export class ObjectsComponent implements OnInit{
 
   ngOnInit(): void {
     this.objectService.getObjects().subscribe( obj => {
-      this.objects = obj;
+      // this.objects = obj.map();
       console.log(this.objects);
     });
   }
