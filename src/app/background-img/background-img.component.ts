@@ -15,6 +15,7 @@ export class BackgroundImgComponent {
 
   constructor( private apiService: ApiService) { }
 
+  // Starts up api call
   ngOnInit(): void {
     console.log('hi')
     this.apiService.getToday().subscribe(data => {
