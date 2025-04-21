@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
+import { withCache } from '@ngneat/cashew';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class ApiService {
 
   getToday(){
     const h = {'api_key': this.key};
-    return this.http.get(this.today, { params: h });
+    return this.http.get(this.today, { params: h, context: withCache()});
   }
+  
 }
