@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './background-img.component.css'
 })
 export class BackgroundImgComponent {
+
   key: string = '';
   service = inject(ApiService);
   apiResponse: any
@@ -37,8 +38,11 @@ export class BackgroundImgComponent {
     this.apiService.getToday().subscribe(data => {
       console.log(data)
       this.apodData = data;
+      this.imageSrc = this.apodData.url;
     });
   }
 
-
+  getFiveResponses() {
+    throw new Error('Method not implemented.');
+    }
 }

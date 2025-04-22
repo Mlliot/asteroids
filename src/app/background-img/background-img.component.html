@@ -1,9 +1,8 @@
 @if(apodData){
+    <div class="header coloredBackground absolute"><h1>Nasa Near Earth Objects</h1> <p class="right">Edwin & Elliot</p></div>
+    <!--   <div class="center coloredBackground"><p>{{ apodData.explanation }}</p></div> -->
 
-      <div class="header coloredBackground"><h1>Nasa Near Earth Objects</h1></div>
-      <div class="center coloredBackground"><p>{{ apodData.explanation }}</p></div>
-
-    <div class="absolute">
+    <div class="absolute image">
         <img class = "img" [src]="imageSrc" alt="{{ apodData.title }}">
     </div>
 }
