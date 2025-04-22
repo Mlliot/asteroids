@@ -7,3 +7,7 @@
     display: flex;
     flex-direction: row;
 }
+
+.objectCard:hover {
+    background-color: rgb(40, 40, 40);
+}
