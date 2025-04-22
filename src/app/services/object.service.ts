@@ -21,10 +21,15 @@ export class ObjectService implements OnInit{
     
   }
 
+  getToday(){
+    return this.service.getToday();
+  }
+
   getObjects(){
-    this.objects = this.service.getToday();
+    this.objects = this.service.getNeoToday();
     return this.objects;
   }
+
 }
 
 //this class caches todays near earch objects.

@@ -11,4 +11,5 @@ import { BackgroundImgComponent } from './background-img/background-img.componen
 })
 export class AppComponent {
   title = 'asteroids';
+
 }

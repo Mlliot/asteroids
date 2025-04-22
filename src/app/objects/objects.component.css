@@ -1,0 +1,30 @@
+.fill {
+    background-color: rgba(0, 0, 0, 0.486);
+    height: 70vh;
+    width: 70vw;
+    margin: 15vh 15vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.103);
+}
+
+.fillCard {
+    /* width: 45%; */
+    height: 95%;
+    background-color: rgba(100, 100, 100, 0.185);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.103);
+    /* margin: 1%; */
+}
+.fillCard:first-child{
+    width: 25%;
+
+}
+
+.fillCard:nth-child(2){
+     flex: 1;
+     margin: 0px 1%;
+}

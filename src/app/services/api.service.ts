@@ -18,8 +18,8 @@ export class ApiService {
 
   // Letf off trying to pslice the eyar to 21 or 22 since that is what is needed for the API call
   private key: string = "Zfd1tZZSFwIBgRAKOdhafBz8xcW8WuRJ8xDHmlNR";
-  //private today: string = "https://api.nasa.gov/neo/rest/v1/feed/today";
-  private today: string = 'https://api.nasa.gov/planetary/apod';
+  private neoToday: string = "https://api.nasa.gov/neo/rest/v1/feed/today";
+  private today: string =  'https://api.nasa.gov/planetary/apod';
   // private close: string = 'https://www.neowsapp.com/rest/v1/feed?start_date=2025-04-21'
   private close: string = `https://www.neowsapp.com/rest/v1/feed?start_date=${this.year}-${this.month}-${this.day}`
 
@@ -32,6 +32,11 @@ export class ApiService {
   getToday() {
     const h = { 'api_key': this.key };
     return this.http.get(this.today, { params: h, context: withCache() });
+  }
+
+  getNeoToday(){
+    const h = {'api_key': this.key};
+    return this.http.get(this.neoToday, { params: h, context: withCache()});
   }
 
   getClosest() {
