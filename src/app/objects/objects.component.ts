@@ -13,7 +13,8 @@ import { JsonPipe } from '@angular/common';
 export class ObjectsComponent implements OnInit{
   
   service = inject(ApiService);
-  objects: any;
+  objData: any;
+  private day = this.service.year + "-" + "0" + this.service.month + "-" + this.service.day;
 
   listOfObjects: Signal<any> = signal(0);
   
@@ -25,9 +26,9 @@ export class ObjectsComponent implements OnInit{
 
   ngOnInit(): void {
     this.service.getNeoToday().subscribe( obj => {
-      this.objects = obj;
-      console.log(this.objects);
+      this.objData = obj;
+      console.log(this.objData.near_earth_objects[this.day][0]);
     });
+    // console.log(this.day);
   }
-
 }

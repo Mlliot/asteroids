@@ -14,7 +14,8 @@ export class ApiService {
   year: number = this.now.getFullYear()
   
   // Letf off trying to pslice the eyar to 21 or 22 since that is what is needed for the API call
-  private key: string = "Zfd1tZZSFwIBgRAKOdhafBz8xcW8WuRJ8xDHmlNR";
+  // private key: string = "Zfd1tZZSFwIBgRAKOdhafBz8xcW8WuRJ8xDHmlNR";
+  private key: string = "UCAtl1BChgein4S2NlMDmmzFR3Vc1yU02U02m7F4";
   private neoToday: string = "https://api.nasa.gov/neo/rest/v1/feed/today";
   private today: string =  'https://api.nasa.gov/planetary/apod';
   // private close: string = 'https://www.neowsapp.com/rest/v1/feed?start_date=2025-04-21'
@@ -37,7 +38,7 @@ export class ApiService {
   }
 
   getClosest() {
-    return this.http.get(this.close)
+    return this.http.get(this.close, { context: withCache()});
   }
   
 }

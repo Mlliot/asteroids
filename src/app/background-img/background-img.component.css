@@ -17,6 +17,8 @@ h1 {
 
 .image {
     z-index: -1;
+    max-height: 140vh;
+    overflow: hidden;
 }
 
 .center{
