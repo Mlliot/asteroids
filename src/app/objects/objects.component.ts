@@ -14,6 +14,7 @@ export class ObjectsComponent implements OnInit{
   
   service = inject(ApiService);
   objData: any;
+  neoData: any;
   private day = this.service.year + "-" + "0" + this.service.month + "-" + this.service.day;
 
   listOfObjects: Signal<any> = signal(0);
@@ -27,7 +28,8 @@ export class ObjectsComponent implements OnInit{
   ngOnInit(): void {
     this.service.getNeoToday().subscribe( obj => {
       this.objData = obj;
-      console.log(this.objData.near_earth_objects[this.day][0]);
+      this.neoData = this.objData.near_earth_objects[this.day];
+      console.log(this.neoData);
     });
     // console.log(this.day);
   }

@@ -1,12 +1,9 @@
-<div>
-    @for(object of objData; track object){
-        <!-- <div>{{object | json}}</div> -->
-    }
-</div>
 
 <div class = "fill">
     <div class="fillCard">
-
+        @for(object of neoData; track object){
+            <div>{{object.id}}</div>
+        }
     </div>
     <div class="fillCard">
 
