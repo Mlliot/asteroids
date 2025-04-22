@@ -24,7 +24,13 @@ export class ApiService {
   // private close: string = 'https://www.neowsapp.com/rest/v1/feed?start_date=2025-04-21'
   private close: string = `https://www.neowsapp.com/rest/v1/feed?start_date=${this.year}-${this.month}-${this.day}`
 
-  constructor() { }
+  objData: any;
+  neoData: any;
+  todayPic: any;
+
+  constructor() { 
+    this.todayPic = this.getToday();
+  }
 
   getKey() {
     return this.key;

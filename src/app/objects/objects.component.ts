@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, Signal, signal } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { ObjectService } from '../services/object.service';
+// import { ObjectService } from '../services/object.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { JsonPipe } from '@angular/common';
 import { ObjectCardComponent } from "../object-card/object-card.component";

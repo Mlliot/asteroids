@@ -1,7 +1,7 @@
 
-<div>
-    <app-background-img></app-background-img>
+<div [ngStyle]="{'background-image': 'url(' + imgUrl + ')'}">
+    <app-header></app-header>
     <app-objects></app-objects>
-    <!-- <app-footer></app-footer> -->
+    <app-footer></app-footer>
 </div>
 

@@ -1,7 +1,12 @@
 .footer{
     width: 100vw;
     height: 20vh;
-    background-color: rgba(255, 0, 0, 0.452);
+    background-color: rgba(53, 53, 53, 0.452);
     position: absolute;
     bottom: 0px;
+}
+
+.right{
+    float: right;
+    padding: 0 2em;
 }
