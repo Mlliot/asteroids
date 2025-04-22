@@ -2,10 +2,13 @@
 <div class = "fill">
     <div class="fillCard">
         @for(object of neoData; track object){
-            <div>{{object.id}}</div>
+            <app-object-card>
+                <div name> {{object.name}} </div> 
+                <div hazard> {{object.is_potentially_hazardous_asteroid}} </div> 
+                <div id> {{object.id}} </div> 
+            </app-object-card>
         }
     </div>
     <div class="fillCard">
-
     </div>
 </div>

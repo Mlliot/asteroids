@@ -3,10 +3,11 @@ import { HttpClientModule } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-background-img',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, FooterComponent],
   templateUrl: './background-img.component.html',
   styleUrl: './background-img.component.css'
 })

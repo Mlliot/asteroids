@@ -2,4 +2,6 @@
 body {
     background-color: black;
     color: white;
+    height: 120vh;
+    margin: 0;
 }

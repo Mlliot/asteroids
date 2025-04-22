@@ -1,0 +1,7 @@
+.footer{
+    width: 100vw;
+    height: 20vh;
+    background-color: rgba(255, 0, 0, 0.452);
+    position: absolute;
+    bottom: 0px;
+}

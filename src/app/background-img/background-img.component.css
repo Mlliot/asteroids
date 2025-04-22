@@ -13,11 +13,12 @@ h1 {
     top: 0px;
     left: 0px;
     width: 98.7vw;
+    height: 120vh;
 }
 
 .image {
     z-index: -1;
-    max-height: 140vh;
+    max-height: 120vh;
     overflow: hidden;
 }
 

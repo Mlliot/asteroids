@@ -3,10 +3,11 @@ import { ApiService } from '../services/api.service';
 import { ObjectService } from '../services/object.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { JsonPipe } from '@angular/common';
+import { ObjectCardComponent } from "../object-card/object-card.component";
 
 @Component({
   selector: 'app-objects',
-  imports: [JsonPipe],
+  imports: [JsonPipe, ObjectCardComponent],
   templateUrl: './objects.component.html',
   styleUrl: './objects.component.css'
 })

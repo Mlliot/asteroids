@@ -1,0 +1,9 @@
+.objectCard{
+    border: 2px solid white;
+    padding: 2%;
+}
+
+.objCard{
+    display: flex;
+    flex-direction: row;
+}
