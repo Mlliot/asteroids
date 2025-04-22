@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-object-card',
-  imports: [],
+  imports: [MatIconModule],
   template: `
       <div class="objectCard">
-        <!-- <label>Name:</label> -->
-        <div class="objCard"> 
-          <label> Name: </label>
-          <ng-content select="[name]"></ng-content> 
+        <div>
+            <mat-icon>grade</mat-icon>
         </div>
-        <div class="objCard"> 
-        <label> ID: </label>
-          <ng-content select="[id]"> </ng-content> 
-        </div>
-        <div class="objCard"> 
-        <label> Hazard: </label>
-          <ng-content select="[hazard]"> </ng-content> 
+        <div class="objCardHolder">
+          <div class="objCard"> 
+            <label> Name: </label>
+            <ng-content select="[name]"></ng-content> 
+          </div>
+          <div class="objCard"> 
+          <label> ID: </label>
+            <ng-content select="[id]"> </ng-content> 
+          </div>
+          <div class="objCard"> 
+          <label> Hazard: </label>
+            <ng-content select="[hazard]"> </ng-content> 
+          </div>
         </div>
       </div>
 

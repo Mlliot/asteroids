@@ -19,3 +19,14 @@ h1 {
 .header{
     height: 15vh;
 }
+
+.about{
+    position: absolute;
+    top: 90vh;
+    left: 2em;
+    font-size: .8em;
+}
+
+mat-icon:hover{
+    color:rgba(255, 255, 255, 0.658);
+}
