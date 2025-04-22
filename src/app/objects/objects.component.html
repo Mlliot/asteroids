@@ -2,7 +2,7 @@
 <div class = "fill">
     <div class="fillCard">
         @for(object of neoData; track object){
-            <app-object-card>
+            <app-object-card (click) = 'setCurr(object)'>
                 <div name> {{object.name}} </div> 
                 <div hazard> {{object.is_potentially_hazardous_asteroid}} </div> 
                 <div id> {{object.id}} </div> 
@@ -10,5 +10,17 @@
         }
     </div>
     <div class="fillCard">
+        <div *ngIf="!itemSelected">Select a Object from the list</div>
+        <div *ngIf="itemSelected">
+        <p>Magnitude: {{defaultMagnitude()}}</p>
+        <p>Is Hazardous: {{defaultHazard()}}</p>
+        <p>Estimated Miss Distance(Miles): {{currInfo().missDistance}}</p>
+        <p>Estimated Minimum Diameter(Miles): {{currInfo().minDiameter}}</p>
+        <p>Estimated Maximum Diameter(Miles): {{currInfo().maxDiameter}}</p>
+        <p>Estimated Velocity in Miles: {{defaultVelocity()}}</p>
+        <p>Orbiting Body: {{defaultOrbiting()}}</p>
+
+        <button (click) = navigateUrl(defaultUrl())>For more Info</button>
+    </div>
     </div>
 </div>

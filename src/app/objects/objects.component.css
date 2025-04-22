@@ -29,4 +29,20 @@
 .fillCard:nth-child(2){
      flex: 1;
      margin: 0px 1%;
+     justify-items: center;
+     align-content: center;
 }
+
+/* .fillCard app-object-card :hover {
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+} */
+
+.fillCard:first-child app-object-card:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* .fillCard:first-child:hover {
+    background-color: aquamarine;
+} */
