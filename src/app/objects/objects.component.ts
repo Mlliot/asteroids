@@ -11,6 +11,11 @@ export interface Info {
   maxDiameter: number;
 }
 
+export interface Meters {
+  minMeters: number,
+  maxMeters: number
+}
+
 @Component({
   selector: 'app-objects',
   imports: [JsonPipe, ObjectCardComponent, CommonModule],
@@ -32,7 +37,11 @@ export class ObjectsComponent implements OnInit {
   defaultHazard = signal(false)
   defaultOrbiting = signal('')
   currInfo = signal<Info>({ missDistance: '', minDiameter: 0, maxDiameter: 0 });
+  currMeters = signal<Meters>({ minMeters: 0, maxMeters: 0 })
   itemSelected = false
+  scale = 1
+
+  zoomStyle = {}
 
 
   // today;
@@ -63,13 +72,64 @@ export class ObjectsComponent implements OnInit {
       maxDiameter: curr.estimated_diameter.miles.estimated_diameter_max
     })
 
+    this.currMeters.set({
+      minMeters: curr.estimated_diameter.meters.estimated_diameter_min,
+      maxMeters: curr.estimated_diameter.meters.estimated_diameter_max
+    })
+
 
   }
 
   //Current way of naviagting out, not sure if right but for now this is what we got
-  navigateUrl(url:any) {
+  navigateUrl(url: any) {
 
     window.location.href = url;
 
   }
+
+
+  getCircleSize(meters: Meters) {
+    // Formula to convert meters to px
+    const min = meters.minMeters * 3779.527559;
+    const max = meters.minMeters * 3779.527559;
+
+    // Have to proportion circle to fit content divide by 100k
+    const median = ((min + max) / 2) / 100000
+    return {
+      width: `${median}px`,
+      height: `${median}px`
+    };
+  }
+
+
+  onZoom(event: WheelEvent) {
+    event.preventDefault();
+    const zoomFactor = 0.1;
+    if (event.deltaY < 0) {
+      this.scale += zoomFactor;
+    } else {
+      this.scale -= zoomFactor;
+    }
+    this.scale = Math.max(0.1, Math.min(this.scale, 3)); // Limit the zoom scale
+    const zoomContent = document.querySelector('.zoom-content') as HTMLElement;
+    zoomContent.style.transform = `scale(${this.scale})`;
+
+
+    // Calculate the new transform-origin based on the mouse position
+    // const rect = (event.target as HTMLElement).getBoundingClientRect();
+    // const offsetX = event.clientX - rect.left;
+    // const offsetY = event.clientY - rect.top;
+
+    // this.zoomStyle = {
+    //   transform: `scale(${this.scale})`,
+    //   transformOrigin: `${offsetX}px ${offsetY}px`
+    // };
+
+    //  const zoomContent = document.querySelector('.zoom-content') as HTMLElement;
+    //  zoomContent.style.transform = `scale(${this.scale})`
+    //  zoomContent.style.transformOrigin = `${offsetX}px ${offsetY}px`
+
+  }
+
+
 }
