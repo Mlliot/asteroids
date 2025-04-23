@@ -1,4 +1,4 @@
-import { Component, HostListener,AfterViewInit, inject, OnInit, Signal, signal } from '@angular/core';
+import { Component, HostListener, AfterViewInit, inject, OnInit, Signal, signal } from '@angular/core';
 import { ApiService } from '../services/api.service';
 // import { ObjectService } from '../services/object.service';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -34,6 +34,9 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
   viewportWidth = window.innerWidth // need this to start formula of conversion unit
   viewportHeight = window.innerHeight;
 
+  mediaQuery = window.matchMedia('(max-width: 800px)');
+
+
   defaultUrl = signal('')
   defaultVelocity = signal(0)
   defaultMagnitude = signal(0)
@@ -45,7 +48,7 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
   scale = 1
 
   zoomStyle = {}
-  currName= signal('');
+  currName = signal('');
   imgUrl: any;
 
 
@@ -61,23 +64,26 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
       this.neoData = this.objData.near_earth_objects[this.day];
       console.log(this.neoData);
     });
-    
-    this.service.todayPic.subscribe( (obj: any) => {
+
+    this.service.todayPic.subscribe((obj: any) => {
       this.imgUrl = obj.url;
-      console.log(this.imgUrl);})
- 
+      console.log(this.imgUrl);
+    })
+
     // console.log(this.day);
   }
 
-  
-ngAfterViewInit(): void {
-  //     this.changeSize();
-    }
-  
+
+  ngAfterViewInit(): void {
+    // this.changeSize();
+  }
+
 
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
+    // this.viewportWidth = window.innerWidth
+    // this.viewportHeight = window.innerHeight
     // this.changeSize();
   }
 
@@ -113,17 +119,35 @@ ngAfterViewInit(): void {
 
 
   getCircleSize(meters: Meters) {
-    // Formula to convert meters to px
-    const min = meters.minMeters * 3779.527559;
-    const max = meters.minMeters * 3779.527559;
 
-    // Have to proportion circle to fit content divide by 100k
-    const median = ((min + max) / 2) / 100000
-    return {
-      width: `${median}px`,
-      height: `${median}px`
-    };
-  }
+    // if (this.mediaQuery.matches) {
+    //   const asteroid = document.querySelector('.circle') as HTMLElement;
+
+    //   const oldWidth = parseFloat(getComputedStyle(asteroid).width);
+    //   const oldHeight = parseFloat(getComputedStyle(asteroid).height);
+
+    //   const newW = oldWidth - 60
+    //   const newH = oldHeight - 60
+    //   console.log('hello ' + newW + ' ' + newH)
+    //   return {
+    //     width:  `${newW}px`,
+    //     height: `${newH}px`
+    //   };
+    // }
+    // else {
+
+      // Formula to convert meters to px
+      const min = meters.minMeters * 3779.527559;
+      const max = meters.minMeters * 3779.527559;
+
+      // Have to proportion circle to fit content divide by 100k
+      const median = ((min + max) / 2) / 100000
+      return {
+        width: `${median}px`,
+        height: `${median}px`
+      };
+    }
+
 
 
   onZoom(event: WheelEvent) {
@@ -158,33 +182,40 @@ ngAfterViewInit(): void {
   }
 
   // Changing Earth and asteroid sizes, when screen resize, Could use media queries though
-  changeSize() {
-    const asteroid = document.querySelector('.circle') as HTMLElement;
-    const earth = document.querySelector('.earthCircle') as HTMLElement;
-    const zoomContainer = document.querySelector('.zoom-container') as HTMLElement;
+  //   changeSize() {
+  //     const asteroid = document.querySelector('.circle') as HTMLElement;
+  //     const earth = document.querySelector('.earthCircle') as HTMLElement;
+  //     const zoomContainer = document.querySelector('.zoom-container') as HTMLElement;
 
-    //For width conversion
-    let vw = parseInt(zoomContainer.style.width);
-    let asteroidCurrPX = parseInt(asteroid.style.width);
-    let earthCurrPX = parseInt(earth.style.width)
-    let px = (vw / 100) * this.viewportWidth; // converts vw to px
-    let asteroidPercentage = (asteroidCurrPX / px) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
-    let earthPercentage = (earthCurrPX / px) * 100
-    asteroid.style.width = `${asteroidPercentage}`;
-    earth.style.width = `${earthPercentage}`
+  //     //For width conversion
+  //     // let vw = parseInt(zoomContainer.style.width); // would of work if width was inline
+  //     // let asteroidCurrPX = parseInt(asteroid.style.width);
+  //     // let earthCurrPX = parseInt(earth.style.width)
 
 
-    //For height conversion
-    let vh = parseInt(zoomContainer.style.height);
-    let asteroidCurrPXH = parseInt(asteroid.style.height);
-    let earthCurrPXH = parseInt(earth.style.height)
-    let pxH = (vh / 100) * this.viewportHeight; // converts vw to px
-    let asteroidPercentageH = (asteroidCurrPXH / pxH) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
-    let earthPercentageH = (earthCurrPXH / pxH) * 100
-    asteroid.style.height = `${asteroidPercentageH}`;
-    earth.style.height = `${earthPercentageH}`
+  //     let vw = parseInt(getComputedStyle(zoomContainer).width);
+  //     let asteroidCurrPX = parseFloat(getComputedStyle(asteroid).width) / vw * 100;
+  //     let earthCurrPX = parseFloat(getComputedStyle(earth).width) /vw * 100
 
-  }
+  //     let px = (vw / 100) * this.viewportWidth; // converts vw to px
+  //     let asteroidPercentage = (asteroidCurrPX / px) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
+  //     let earthPercentage = (earthCurrPX / px) * 100
+  //     asteroid.style.width = `${asteroidPercentage}`;
+
+  //     earth.style.width = `${earthPercentage}%`
+  //     console.log(earthPercentage + 'hello')
+
+  //     //For height conversion
+  //     let vh = parseInt(zoomContainer.style.height);
+  //     let asteroidCurrPXH = parseInt(asteroid.style.height);
+  //     let earthCurrPXH = parseInt(earth.style.height)
+  //     let pxH = (vh / 100) * this.viewportHeight; // converts vw to px
+  //     let asteroidPercentageH = (asteroidCurrPXH / pxH) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
+  //     let earthPercentageH = (earthCurrPXH / pxH) * 100
+  //     asteroid.style.height = `${asteroidPercentageH}`;
+  //     earth.style.height = `${earthPercentageH}`
+
+  //   }
 
 
 }
