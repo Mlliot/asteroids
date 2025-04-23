@@ -42,6 +42,7 @@ export class ObjectsComponent implements OnInit {
   scale = 1
 
   zoomStyle = {}
+  currName= signal('');
 
 
   // today;
@@ -61,6 +62,7 @@ export class ObjectsComponent implements OnInit {
 
   setCurr(curr: any) {
     this.itemSelected = true
+    this.currName.set(curr.name);
     this.defaultUrl.set(curr.nasa_jpl_url)
     this.defaultVelocity.set(curr.close_approach_data[0].relative_velocity.miles_per_hour)
     this.defaultMagnitude.set(curr.absolute_magnitude_h)

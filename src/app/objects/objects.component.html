@@ -10,33 +10,50 @@
         }
     </div>
     <div class="fillCard">
-        <div *ngIf="!itemSelected">Select a Object from the list</div>
-        <div *ngIf="itemSelected">
-            <p>Magnitude: {{defaultMagnitude()}}</p>
-            <p>Is Hazardous: {{defaultHazard()}}</p>
-            <p>Estimated Miss Distance(Miles): {{currInfo().missDistance}}</p>
-            <p>Estimated Minimum Diameter(Miles): {{currInfo().minDiameter}}</p>
-            <p>Estimated Maximum Diameter(Miles): {{currInfo().maxDiameter}}</p>
-            <p>Estimated Velocity in Miles: {{defaultVelocity()}}</p>
-            <p>Orbiting Body: {{defaultOrbiting()}}</p>
-
-            <br>
-            <p>*Sizes are proportion to Scale</p>
-            <p class = "p-line">Earth:  </p><div class = blueCircle></div> <br>
-            <p class = "p-line">Near Object: </p> <div class = redCircle></div>
-            <!-- zoom-container.component.html -->
-            <div class="zoom-container" (wheel)="onZoom($event)">
-                  <div class="zoom-content">
+        <h1 *ngIf="itemSelected" class="centered">Selected Object: {{currName()}}</h1>
+        <div class="margin" *ngIf="!itemSelected">Select a Object from the list</div>
+        <div class="margin nData" *ngIf="itemSelected">
+            <div class="nDataCard">
+                <div class="details">
+                    <h2>Details</h2>
+                    <p class="smallText">Magnitude: </p>
+                    {{defaultMagnitude()}}
+                    <p class="smallText">Is Hazardous: </p>
+                    {{defaultHazard()}}
+                    <p class="smallText">Est. Miss Distance(Miles): </p>
+                    {{currInfo().missDistance  | number: '.2-2'}}
+                    <!-- <p>Estimated Minimum Diameter(Miles): </p>
+                    {{currInfo().minDiameter}}
+                    <p>Estimated Maximum Diameter(Miles): </p>
+                    {{currInfo().maxDiameter}} -->
+                    <p class="smallText">Est. Velocity (Miles): </p>
+                    {{defaultVelocity() | number: '.2-2'}}
+                    <p class="smallText">Orbiting Body: </p>
+                    {{defaultOrbiting()}}
+                    <br>
+                    <button class="absolute2"(click)=navigateUrl(defaultUrl())>For more Info</button>
+                </div>
+            </div>
+            <div class="nDataCard">
+                <!-- zoom-container.component.html -->
+                <div class="zoom-container" (wheel)="onZoom($event)">
+                    <div class="zoom-content">
 
                     <div class=" circle" [ngStyle]="getCircleSize(currMeters())"></div>
                     <br>
                     <div class="earthCircle"></div>
+                    </div>
+                    <div class="absolute smallText">
+                        <p class = "p-line">Earth:  </p><div class = blueCircle></div>
+                        <p class = "p-line">Near Object: </p> <div class = redCircle></div>
+                        <p class ="smallText">*Sizes are proportion to Scale</p>
+                    </div>
                 </div>
             </div>
 
 
             <br>
-            <button (click)=navigateUrl(defaultUrl())>For more Info</button>
         </div>
     </div>
+    
 </div>
