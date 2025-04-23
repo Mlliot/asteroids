@@ -193,6 +193,8 @@ button{
     color: rgba(255, 255, 255, 0.89);
     padding: .5em;
     border: none;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 900;
 }
 button:hover {
     cursor: pointer;
