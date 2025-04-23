@@ -1,4 +1,4 @@
-div{
+.container{
     height: 120vh;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -6,4 +6,20 @@ div{
     position: absolute;
     top: 0px;
     /* filter: blur(2px); */
+}
+.about{
+    position: absolute;
+    top: 90vh;
+    left: 2em;
+    font-size: .8em;
+    display: flex;
+    flex-direction: row;
+}
+
+mat-icon{
+    margin: .3em;
+}
+
+mat-icon:hover{
+    color:rgba(255, 255, 255, 0.658);
 }

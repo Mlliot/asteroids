@@ -10,9 +10,6 @@ import { ApiService } from '../services/api.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
-
-  picDesc = '';
-  about = false;
   service = inject(ApiService);
 
   ngOnInit(): void {
@@ -21,12 +18,4 @@ export class HeaderComponent implements OnInit{
     // })
   }
 
-  onClick(){
-    if(this.about){
-      this.about = false;
-    } else {
-      this.about = true;
-    }
-    console.log("Header clock, + " + this.about);
-  }
 }

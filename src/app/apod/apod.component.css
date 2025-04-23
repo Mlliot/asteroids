@@ -1,0 +1,11 @@
+.background{
+    position: absolute;
+    top: 50vh;
+    left: 2em;
+    /* background-color: red; */
+    background-size: contain;
+    width: 300px;
+    height: auto;
+    overflow: visible;
+    border: 10px ridge rgb(209, 183, 99);
+}

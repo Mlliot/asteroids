@@ -1,4 +1,5 @@
-<div class="fill" [ngStyle]="{'background-image': 'url(' + imgUrl + ')'}">
+
+<div class="fill">
     <div class="fillCard">
         @for(object of neoData; track object){
         <app-object-card (click)='setCurr(object)'>
@@ -50,10 +51,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <br>
         </div>
     </div>
-    
 </div>
