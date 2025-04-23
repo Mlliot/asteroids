@@ -22,7 +22,8 @@
 }
 
 .objectCard:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
 }
 
 mat-icon{

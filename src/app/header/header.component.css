@@ -13,7 +13,9 @@ h1 {
 }
 
 .coloredBackground {
-    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter:blur(5px);
+    /* background-color: rgba(30, 64, 94, 0.13); */
+    border-bottom: 2px ridge rgba(255, 255, 255, 0.171);
 }
 
 .header{
