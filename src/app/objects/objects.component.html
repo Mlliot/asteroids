@@ -12,6 +12,9 @@
     </div>
     <div class="fillCard">
         <h1 *ngIf="itemSelected" class="centered">Selected Object: {{currName()}}</h1>
+        @if(defaultHazard()){
+            <h1 class="hazard">HAZARD</h1>
+        }
         <div class="margin" *ngIf="!itemSelected">Select a Object from the list</div>
         <div class="margin nData" *ngIf="itemSelected">
             <div class="nDataCard">

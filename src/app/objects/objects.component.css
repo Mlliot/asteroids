@@ -31,6 +31,7 @@
     background-color: rgba(100, 100, 100, 0.185);
     /* border-radius: 10px; */
     border: 2px solid rgba(255, 255, 255, 0.103);
+    position: relative;
     /* text-align: center; */
     /* margin: 1%; */
 }
@@ -173,7 +174,18 @@
 } */
 
 button{
-    float: right;
+    position: absolute;
+    right: 20%;
+    font-size: .7em;
+    border-radius: 1em;
+    background-color: #ffffff3c;
+    color: rgba(255, 255, 255, 0.89);
+    padding: .5em;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #cccccc91;
 }
 
 .centered{
@@ -190,4 +202,14 @@ button{
     .details{
         font-size: 1em;
     }
+}
+.hazard{
+    color: rgba(255, 0, 0, 0.808);
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    border: 5px solid rgba(255, 0, 0, 0.61);
+    backdrop-filter: blur(2px);
+    border-radius: .5em;
+    padding: .5em 1em;
 }

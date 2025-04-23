@@ -17,9 +17,13 @@
 }
 
 mat-icon{
-    margin: .3em;
+    margin: .2em;
 }
 
 mat-icon:hover{
     color:rgba(255, 255, 255, 0.658);
+}
+
+p{
+    font-size: .8em;
 }
