@@ -17,6 +17,7 @@
     background-color: rgba(100, 100, 100, 0.185);
     /* border-radius: 10px; */
     border: 2px solid rgba(255, 255, 255, 0.103);
+    /* text-align: center; */
     /* margin: 1%; */
 }
 
@@ -29,8 +30,15 @@
 .fillCard:nth-child(2) {
     flex: 1;
     margin: 0px 1%;
-    justify-items: center;
+    justify-items: left;
+    /* padding: 1em; */
     align-content: center;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.margin{
+    margin: 1em 2em;
 }
 
 /* .fillCard app-object-card :hover {
@@ -116,4 +124,58 @@
     padding: 20px;
     background-color: lightblue;
     border: 1px solid #000;
+}
+
+.smallText {
+    font-size: .8em;
+    margin: .5em 0px;
+}
+
+.nData{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    width: 75%;
+}
+
+.nDataCard{
+    margin: .5em;
+    flex: 1;
+}
+.nDataCard:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.absolute{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* .absolute2{
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+button{
+    float: right;
+}
+
+.centered{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.details{
+    font-size: 2em;
+}
+
+@media screen and (max-width: 1600px){
+    .details{
+        font-size: 1em;
+    }
 }
