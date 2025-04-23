@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ObjectsComponent } from "./objects/objects.component";
 import { FooterComponent } from "./footer/footer.component";
@@ -25,5 +25,4 @@ export class AppComponent implements OnInit{
       console.log(this.imgUrl);
     });
   }
-
 }

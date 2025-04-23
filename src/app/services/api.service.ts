@@ -15,10 +15,10 @@ export class ApiService {
 
   // year = this.now.getFullYear().toString().slice(-2);
 
-
+  // moon : https://apod.nasa.gov/apod/image/2504/TerminatorMoon_Addis_960.jpg
   // Letf off trying to pslice the eyar to 21 or 22 since that is what is needed for the API call
-  // private key: string = "Zfd1tZZSFwIBgRAKOdhafBz8xcW8WuRJ8xDHmlNR";
-  private key: string = "UCAtl1BChgein4S2NlMDmmzFR3Vc1yU02U02m7F4";
+  private key: string = "Zfd1tZZSFwIBgRAKOdhafBz8xcW8WuRJ8xDHmlNR";
+  // private key: string = "UCAtl1BChgein4S2NlMDmmzFR3Vc1yU02U02m7F4";
   private neoToday: string = "https://api.nasa.gov/neo/rest/v1/feed/today";
   private today: string =  'https://api.nasa.gov/planetary/apod';
   // private close: string = 'https://www.neowsapp.com/rest/v1/feed?start_date=2025-04-21'
