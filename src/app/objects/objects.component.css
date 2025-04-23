@@ -88,8 +88,10 @@
 /* zoom-container.component.css */
 .zoom-container {
     overflow: hidden;
-    width: 147%;
-    height: 400px;
+    width:23vw;
+    height:31vh;
+    /* width: 160%;
+    height: 28rem; */
     border: 1px solid #ccc;
     display: flex;
     justify-content: center;

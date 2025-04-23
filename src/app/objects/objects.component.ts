@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, Signal, signal } from '@angular/core';
+import { Component, HostListener,AfterViewInit, inject, OnInit, Signal, signal } from '@angular/core';
 import { ApiService } from '../services/api.service';
 // import { ObjectService } from '../services/object.service';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -22,7 +22,7 @@ export interface Meters {
   templateUrl: './objects.component.html',
   styleUrl: './objects.component.css'
 })
-export class ObjectsComponent implements OnInit {
+export class ObjectsComponent implements OnInit, AfterViewInit {
 
   service = inject(ApiService);
   objData: any;
@@ -30,6 +30,9 @@ export class ObjectsComponent implements OnInit {
   private day = this.service.year + "-" + "0" + this.service.month + "-" + this.service.day;
 
   listOfObjects: Signal<any> = signal(0);
+
+  viewportWidth = window.innerWidth // need this to start formula of conversion unit
+  viewportHeight = window.innerHeight;
 
   defaultUrl = signal('')
   defaultVelocity = signal(0)
@@ -58,6 +61,19 @@ export class ObjectsComponent implements OnInit {
     });
     // console.log(this.day);
   }
+
+  
+ngAfterViewInit(): void {
+      this.changeSize();
+    }
+  
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.changeSize();
+  }
+
 
   setCurr(curr: any) {
     this.itemSelected = true
@@ -112,6 +128,8 @@ export class ObjectsComponent implements OnInit {
     }
     this.scale = Math.max(0.1, Math.min(this.scale, 3)); // Limit the zoom scale
     const zoomContent = document.querySelector('.zoom-content') as HTMLElement;
+    // const circle = document.querySelector('.circle') as HTMLElement;
+    // console.log(circle)
     zoomContent.style.transform = `scale(${this.scale})`;
 
 
@@ -128,6 +146,35 @@ export class ObjectsComponent implements OnInit {
     //  const zoomContent = document.querySelector('.zoom-content') as HTMLElement;
     //  zoomContent.style.transform = `scale(${this.scale})`
     //  zoomContent.style.transformOrigin = `${offsetX}px ${offsetY}px`
+
+  }
+
+  //Changing Earth and asteroid sizes, when screen resize, Could use media queries though
+  changeSize() {
+    const asteroid = document.querySelector('.circle') as HTMLElement;
+    const earth = document.querySelector('.earthCircle') as HTMLElement;
+    const zoomContainer = document.querySelector('.zoom-container') as HTMLElement;
+
+    //For width conversion
+    let vw = parseInt(zoomContainer.style.width);
+    let asteroidCurrPX = parseInt(asteroid.style.width);
+    let earthCurrPX = parseInt(earth.style.width)
+    let px = (vw / 100) * this.viewportWidth; // converts vw to px
+    let asteroidPercentage = (asteroidCurrPX / px) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
+    let earthPercentage = (earthCurrPX / px) * 100
+    asteroid.style.width = `${asteroidPercentage}`;
+    earth.style.width = `${earthPercentage}`
+
+
+    //For height conversion
+    let vh = parseInt(zoomContainer.style.height);
+    let asteroidCurrPXH = parseInt(asteroid.style.height);
+    let earthCurrPXH = parseInt(earth.style.height)
+    let pxH = (vh / 100) * this.viewportHeight; // converts vw to px
+    let asteroidPercentageH = (asteroidCurrPXH / pxH) * 100 // converts px to %. currPX is the actual px of element, px is the base px size of parent which is needed for formula
+    let earthPercentageH = (earthCurrPXH / pxH) * 100
+    asteroid.style.height = `${asteroidPercentageH}`;
+    earth.style.height = `${earthPercentageH}`
 
   }
 
