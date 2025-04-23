@@ -40,6 +40,7 @@
     width: 25%;
     overflow-x: hidden;
     overflow-y: scroll;
+    scrollbar-color: rgba(255, 255, 255, 0.699) rgba(255, 255, 255, 0.123);
 }
 
 .fillCard:nth-child(2) {
@@ -74,7 +75,7 @@
 .circle {
     width: 100px;
     height: 100px;
-    background-color: rgb(255, 0, 0, .8);
+    background-color: rgb(255, 0, 0);
     border-radius: 50%;
     box-shadow: 0 0 50px 30px rgba(255, 110, 110, 0.26);
 }
@@ -186,7 +187,8 @@
 
 button{
     position: absolute;
-    right: 20%;
+    right: .5em;
+    bottom: .5em;
     font-size: .7em;
     border-radius: 1em;
     background-color: #ffffff3c;
@@ -217,13 +219,13 @@ button:hover {
     }
 }
 .hazard{
-    color: rgba(255, 0, 0, 0.808);
+    color: rgb(255, 0, 0);
     position: absolute;
-    left: 5%;
-    top: 5%;
+    bottom: 0;
+    right: 40%;
     border: 5px solid rgba(255, 0, 0, 0.61);
     backdrop-filter: blur(2px);
     border-radius: .5em;
-    padding: .5em 1em;
+    padding: 5px .5em;
     background-color: #ff36361a;
 }
