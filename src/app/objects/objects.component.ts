@@ -4,6 +4,7 @@ import { ApiService } from '../services/api.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { ObjectCardComponent } from "../object-card/object-card.component";
+import { ApodComponent } from "../apod/apod.component";
 
 export interface Info {
   missDistance: string;
@@ -18,7 +19,7 @@ export interface Meters {
 
 @Component({
   selector: 'app-objects',
-  imports: [JsonPipe, ObjectCardComponent, CommonModule],
+  imports: [JsonPipe, ObjectCardComponent, CommonModule, ApodComponent],
   templateUrl: './objects.component.html',
   styleUrl: './objects.component.css'
 })
@@ -61,10 +62,6 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
       this.neoData = this.objData.near_earth_objects[this.day];
       console.log(this.neoData);
     });
-    
-    this.service.todayPic.subscribe( (obj: any) => {
-      this.imgUrl = obj.url;
-      console.log(this.imgUrl);})
  
     // console.log(this.day);
   }
