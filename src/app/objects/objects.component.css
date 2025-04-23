@@ -89,12 +89,12 @@
 }
 
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .earthCircle {
         width: 56.34px;
         height: 56.34px;
     }
-}
+} */
 
 .blueCircle {
     display:inline-block;
