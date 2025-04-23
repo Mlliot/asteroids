@@ -35,7 +35,8 @@
                     <p class="smallText">Orbiting Body: </p>
                     {{defaultOrbiting()}}
                     <br>
-                    <button class="absolute2"(click)=navigateUrl(defaultUrl())>More Info</button>
+                    <!-- <button class="absolute2"(click)=navigateUrl(defaultUrl())>More Info</button> -->
+                    <div class="absolute2"><a [href]="defaultUrl()" target="_blank">More Info</a></div>
                 </div>
             </div>
             <div class="nDataCard">

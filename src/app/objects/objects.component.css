@@ -185,22 +185,26 @@
     left: 0;
 } */
 
-button{
+.absolute2{
     position: absolute;
     right: .5em;
     bottom: .5em;
     font-size: .7em;
     border-radius: 1em;
     background-color: #ffffff3c;
-    color: rgba(255, 255, 255, 0.89);
+    color: rgb(255, 255, 255);
     padding: .5em;
     border: none;
     font-family: "Prosto One", sans-serif;
     font-weight: 900;
 }
-button:hover {
+.absolute2:hover {
     cursor: pointer;
     background-color: #cccccc91;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .centered{

@@ -107,11 +107,11 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
   }
 
   //Current way of naviagting out, not sure if right but for now this is what we got
-  navigateUrl(url: any) {
+  // navigateUrl(url: any) {
 
-    window.location.href = url;
+  //   window.location.href = url;
 
-  }
+  // }
 
 
   getCircleSize(meters: Meters) {

@@ -10,8 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
             <mat-icon>grade</mat-icon>
         </div>
         <div class="objCardHolder">
-          <div class="objCard"> 
-            <label> Name: </label>
+          <div class="objCard name"> 
+            <!-- <label> Name: </label> -->
             <ng-content select="[name]"></ng-content> 
           </div>
           <div class="objCard"> 
