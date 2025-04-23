@@ -1,5 +1,4 @@
 .fill {
-    background-color: rgba(0, 0, 0, 0.486);
     height: 70vh;
     width: 70vw;
     margin: 20vh 15vw;
@@ -9,9 +8,17 @@
     padding: 1%;
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.103);
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-position-y: center;
+
+    opacity: .5;
 }
 
 .fillCard {
+    opacity: 1;
     /* width: 45%; */
     height: 95%;
     background-color: rgba(100, 100, 100, 0.185);
@@ -59,7 +66,7 @@
 .circle {
     width: 100px;
     height: 100px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0, .8);
     border-radius: 50%;
 }
 
@@ -68,7 +75,7 @@
 .earthCircle {
     width: 127.34px;
     height: 127.34px;
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.562);
     border-radius: 50%;
 }
 
@@ -76,7 +83,7 @@
     display:inline-block;
     width:10px;
     height:10px;
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.562);
     border-radius: 50%;
 }
 
@@ -84,7 +91,7 @@
     display:inline-block;
     width:10px;
     height:10px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.836);
     border-radius: 50%;
 }
 

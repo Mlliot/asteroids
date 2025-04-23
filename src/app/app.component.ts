@@ -13,16 +13,9 @@ import { HeaderComponent } from "./header/header.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'asteroids';
-  imgUrl = "";
+  imgUrl = 'https://apod.nasa.gov/apod/image/2504/C2025_F2SWAN_20250414_DEBartlett.jpg';
 
   private service = inject(ApiService);
-
-  ngOnInit(): void {
-    this.service.todayPic.subscribe( (obj: any) => {
-      this.imgUrl = obj.url;
-      console.log(this.imgUrl);
-    });
-  }
 }

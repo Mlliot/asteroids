@@ -43,6 +43,7 @@ export class ObjectsComponent implements OnInit {
 
   zoomStyle = {}
   currName= signal('');
+  imgUrl: any;
 
 
   // today;
@@ -57,6 +58,11 @@ export class ObjectsComponent implements OnInit {
       this.neoData = this.objData.near_earth_objects[this.day];
       console.log(this.neoData);
     });
+    
+    this.service.todayPic.subscribe( (obj: any) => {
+      this.imgUrl = obj.url;
+      console.log(this.imgUrl);})
+ 
     // console.log(this.day);
   }
 
