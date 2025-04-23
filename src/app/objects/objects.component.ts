@@ -71,14 +71,14 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
 
   
 ngAfterViewInit(): void {
-      this.changeSize();
+  //     this.changeSize();
     }
   
 
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    this.changeSize();
+    // this.changeSize();
   }
 
 
@@ -157,7 +157,7 @@ ngAfterViewInit(): void {
 
   }
 
-  //Changing Earth and asteroid sizes, when screen resize, Could use media queries though
+  // Changing Earth and asteroid sizes, when screen resize, Could use media queries though
   changeSize() {
     const asteroid = document.querySelector('.circle') as HTMLElement;
     const earth = document.querySelector('.earthCircle') as HTMLElement;

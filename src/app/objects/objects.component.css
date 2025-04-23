@@ -148,8 +148,6 @@
 .nDataCard{
     margin: .5em;
     flex: 1;
-}
-.nDataCard:first-child{
     display: flex;
     justify-content: center;
     align-items: center;
