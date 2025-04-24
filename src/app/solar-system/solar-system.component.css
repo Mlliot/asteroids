@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*To center items in a container, container must have a height and width*/
+    height: 100vh;
+    width:100vw;
+    color: aqua;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 50px 30px rgba(255, 110, 110, 0.26);
+}
+
+/* 12,734,000 meters  Actual diameter of Earth* Could Fact Check that*/
+/* Sun: Approximately 1,391,400,000 meters.
+Mercury: About 4,880,000 meters. */
+/* Venus: Approximately 12,104,000 meters 1.
+Mars: About 6,779,000 meters 2. */
+
+.sunCircle {
+    width: 139.14px;
+    height: 139.14px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
+}
+.earthCircle {
+    width: 1.2734px;
+    height: 1.2734px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
+}
+
+.mercuryCircle {
+    width: .488px;
+    height: .488px;
+    border-radius: 50%;
+    background-color: rgba(255, 64, 0, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 64, 0, 0.562);
+}
+
+.marsCircle {
+    width: .6779px;
+    height:.6779px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.562);
+    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+}
+
+.venusCircle {
+    width: 1.2104px;
+    height: 1.2104px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.562);
+    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+}
