@@ -5,6 +5,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { ObjectCardComponent } from "../object-card/object-card.component";
 import { ApodComponent } from "../apod/apod.component";
+import { FavoritesService } from '../services/favorites.service';
+import { FavoritesComponent } from "../favorites/favorites.component";
+import { Neo } from '../services/neo';
 
 export interface Info {
   missDistance: string;
@@ -19,18 +22,29 @@ export interface Meters {
 
 @Component({
   selector: 'app-objects',
-  imports: [JsonPipe, ObjectCardComponent, CommonModule, ApodComponent],
+  imports: [JsonPipe, ObjectCardComponent, CommonModule, ApodComponent, FavoritesComponent],
   templateUrl: './objects.component.html',
   styleUrl: './objects.component.css'
 })
 export class ObjectsComponent implements OnInit, AfterViewInit {
+toggleFavOn() {
+  this.favoritesSelector = true;
+}
+toggleFavOff() {
+  this.favoritesSelector = false;
+  }
+addToFavorites() {
+  this.favorites.addNeo(this.currObject);
+}
 
   service = inject(ApiService);
+  favorites = inject(FavoritesService);
+  favoritesList: Neo[] = []; 
+  favoritesSelector = false;
   objData: any;
   neoData: any;
   private day = this.service.year + "-" + "0" + this.service.month + "-" + this.service.day;
 
-  listOfObjects: Signal<any> = signal(0);
 
   viewportWidth = window.innerWidth // need this to start formula of conversion unit
   viewportHeight = window.innerHeight;
@@ -48,6 +62,7 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
   itemSelected = false
   scale = 1
 
+  currObject = {};
   zoomStyle = {}
   currName = signal('');
   imgUrl: any;
@@ -63,9 +78,12 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
     this.service.getNeoToday().subscribe(obj => {
       this.objData = obj;
       this.neoData = this.objData.near_earth_objects[this.day];
-      console.log(this.neoData);
+      // console.log(this.neoData);
+      // this.favorites.initNeo(this.neoData);
     });
- 
+    this.favorites.getFavorites().subscribe( obj => this.favoritesList = obj)
+    this.favorites.initNeo([]);
+    // this.favorites.addNeo();
     // console.log(this.day);
   }
 
@@ -82,9 +100,9 @@ export class ObjectsComponent implements OnInit, AfterViewInit {
     // this.viewportHeight = window.innerHeight
     // this.changeSize();
   }
-
-
+  
   setCurr(curr: any) {
+    this.currObject = curr;
     this.itemSelected = true
     this.currName.set(curr.name);
     this.defaultUrl.set(curr.nasa_jpl_url)

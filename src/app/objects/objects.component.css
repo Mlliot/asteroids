@@ -53,6 +53,15 @@
     overflow-x: hidden;
 }
 
+.favoritesSelector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.selector:hover{
+    color:#ffffffda;
+    cursor: pointer;
+}
 .margin{
     margin: 1em 2em;
 }
@@ -189,23 +198,25 @@
     position: absolute;
     right: .5em;
     bottom: .5em;
-    font-size: .7em;
-    border-radius: 1em;
-    background-color: #ffffff3c;
     color: rgb(255, 255, 255);
-    padding: .5em;
-    border: none;
     font-family: "Prosto One", sans-serif;
     font-weight: 900;
 }
-.absolute2:hover {
+.button:hover {
     cursor: pointer;
     background-color: #cccccc91;
 }
-a{
+.button{
+    margin: 0 1em;
+    font-size: .7em;
+    border-radius: 1em;
+    background-color: #ffffff3c;
     text-decoration: none;
     color: inherit;
+    padding: .5em;
+    border: none;
 }
+
 
 .centered{
     text-align: center;
