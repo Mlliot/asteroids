@@ -1,14 +1,18 @@
 
-<div class="container" [ngStyle]="{'background-image': 'url(' + imgUrl + ')'}">
-    <app-header></app-header>
-    <app-objects></app-objects>
-    @if(about){<app-apod></app-apod>}
-    <app-footer></app-footer>
-</div>
+    <div class="container" [ngStyle]="{'background-image': isHome ? 'url(' + imgUrl + ')' : 'none'}">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <!-- <app-objects></app-objects> -->
+        @if(about){<app-apod></app-apod>}
+        <app-footer></app-footer>
+    </div>
+
 
 <div class="about" (click)="onClick()">
     <div>
         <mat-icon>visibility</mat-icon>
     </div>
-    <div><p>Show Me the Picture of the Day!</p></div>
+    <div>
+        <p>Show Me the Picture of the Day!</p>
+    </div>
 </div>

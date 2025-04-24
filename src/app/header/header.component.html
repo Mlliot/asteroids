@@ -11,7 +11,7 @@
     <div class="modal-content">
         <span (click)="navigatePage()" id="close" class="close">&times;</span>
         <p id="modalDescription" *ngFor="let link of links">
-            <a [routerLink]="link.url" style="display: block">{{ link.text }}</a>
+            <a [routerLink]="link.url" >{{ link.text }}</a>
         </p>
     </div>
 </div>

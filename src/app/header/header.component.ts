@@ -15,15 +15,12 @@ export class HeaderComponent implements OnInit{
   service = inject(ApiService);
   isActive = false
   links = [
-    { text: 'About IFG', url: '/about' },
-    { text: 'Claims', url: '/claims' },
-    { text: 'Joining IFG', url: '/home' },
-    { text: 'For Liability', url: '/liability' },
-    { text: 'For Property', url: '/property' },
-    { text: 'For Business', url: '/business' },
-    { text: 'Contact Us', url: '/contact' },
-    { text: 'Login in', url: '/login' },
-    { text: 'Profile', url: '/profile' }
+    { text: 'Solar System', url: '/solar' },
+    { text: 'Earth', url: '/earth' },
+    { text: 'Info', url: '/info' },
+    { text: 'Space', url: '/space' },
+    { text: 'Settings', url: '/settings' },
+    { text: 'Mars Rover', url: '/mars-rover' },
   ];
 
   ngOnInit(): void {
