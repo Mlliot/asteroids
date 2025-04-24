@@ -2,12 +2,17 @@
 <div class="fill">
     <div class="fillCard">
         <div class="favoritesSelector">
-            <a class="selector" (click)="toggleFavOff()">Daily</a>
-            <a class="selector" (click)="toggleFavOn()">Favorites</a>
+            <a class="selector" (click)="toggleFavOff()"><span>Daily</span></a>
+            <a class="selector" (click)="toggleFavOn()"><span>Favorites</span></a>
         </div>
         @if(!favoritesSelector){
             @for(object of neoData; track object){
                 <app-object-card (click)='setCurr(object)'>
+                    @if(findInFavorites(object)){
+                        <mat-icon icon>stars</mat-icon>
+                    } @else {
+                        <mat-icon icon>star</mat-icon>
+                    }
                     <div name> {{object.name}} </div>
                     <div hazard> {{object.is_potentially_hazardous_asteroid}} </div>
                     <div id> {{object.id}} </div>
@@ -17,6 +22,7 @@
         } @else{
             @for(object of favoritesList; track object.id){
                 <app-object-card (click)='setCurr(object)'>
+                    <mat-icon icon>stars</mat-icon>
                     <div name> {{object.name}} </div>
                     <div hazard> {{object.is_potentially_hazardous_asteroid}} </div>
                     <div id> {{object.id}} </div>
@@ -37,6 +43,7 @@
                     <h2>Details</h2>
                     <p class="smallText">Magnitude: </p>
                     {{defaultMagnitude()}}
+                     
                     <p class="smallText">Is Hazardous: </p>
                     {{defaultHazard()}}
                     <p class="smallText">Est. Miss Distance(Miles): </p>
@@ -54,6 +61,9 @@
                     <div class="absolute2">
                         <a class="button" [href]="defaultUrl()" target="_blank">More Info</a>
                         <button class="button" (click)="addToFavorites()">Add to Favorites</button>
+                        @if(findInFavorites(currObject)){
+                            <button class="button" (click)="addToFavorites()">Remove Favorite</button>
+                        }
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import { ApodComponent } from "../apod/apod.component";
 import { FavoritesService } from '../services/favorites.service';
 import { FavoritesComponent } from "../favorites/favorites.component";
 import { Neo } from '../services/neo';
+import { MatIconModule } from '@angular/material/icon';
 
 export interface Info {
   missDistance: string;
@@ -22,11 +23,19 @@ export interface Meters {
 
 @Component({
   selector: 'app-objects',
-  imports: [JsonPipe, ObjectCardComponent, CommonModule, ApodComponent, FavoritesComponent],
+  imports: [JsonPipe, ObjectCardComponent, CommonModule, ApodComponent, FavoritesComponent, MatIconModule],
   templateUrl: './objects.component.html',
   styleUrl: './objects.component.css'
 })
 export class ObjectsComponent implements OnInit, AfterViewInit {
+
+findInFavorites(obj: any) {
+  if(this.favoritesList.includes(obj)) {
+    return true;
+  }
+  return false;
+}
+
 toggleFavOn() {
   this.favoritesSelector = true;
 }
@@ -34,7 +43,7 @@ toggleFavOff() {
   this.favoritesSelector = false;
   }
 addToFavorites() {
-  this.favorites.addNeo(this.currObject);
+  this.favorites.addNeo(this.currObject());
 }
 
   service = inject(ApiService);
@@ -62,7 +71,7 @@ addToFavorites() {
   itemSelected = false
   scale = 1
 
-  currObject = {};
+  currObject = signal(Neo);
   zoomStyle = {}
   currName = signal('');
   imgUrl: any;
@@ -102,7 +111,7 @@ addToFavorites() {
   }
   
   setCurr(curr: any) {
-    this.currObject = curr;
+    this.currObject.set(curr);
     this.itemSelected = true
     this.currName.set(curr.name);
     this.defaultUrl.set(curr.nasa_jpl_url)

@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
   template: `
       <div class="objectCard">
         <div>
-            <mat-icon>grade</mat-icon>
+            <ng-content select=[icon]/>
         </div>
         <div class="objCardHolder">
           <div class="objCard name"> 
@@ -24,7 +24,6 @@ import { MatIconModule } from '@angular/material/icon';
           </div>
         </div>
       </div>
-
   `,
   styleUrl: './object-card.component.css'
 })
