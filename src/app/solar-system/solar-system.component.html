@@ -1,9 +1,12 @@
-<div class = 'container'>
-    <p>solar-system works!</p>
-    <div class = "sunCircle"></div>
-    <div class = "mercuryCircle"></div>
-    <div class = "venusCircle"></div>
-    <div class = "earthCircle"></div>
-    <div class = "marsCircle"></div>
-    <div class = ""></div>
+<div class='container'>
+    <div class="zoom-container" (wheel)="onZoom($event)">
+        <div class="zoom-content">
+            <div class="sunCircle"></div>
+            <div class="mercuryCircle"></div>
+            <div class="venusCircle"></div>
+            <div class="earthCircle"></div>
+            <div class="marsCircle"></div>
+            <div class=""></div>
+        </div>
+    </div>
 </div>

@@ -8,14 +8,6 @@
     color: aqua;
 }
 
-.circle {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 50%;
-    box-shadow: 0 0 50px 30px rgba(255, 110, 110, 0.26);
-}
-
 /* 12,734,000 meters  Actual diameter of Earth* Could Fact Check that*/
 /* Sun: Approximately 1,391,400,000 meters.
 Mercury: About 4,880,000 meters. */
@@ -28,13 +20,7 @@ Mars: About 6,779,000 meters 2. */
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.562);
     box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
-}
-.earthCircle {
-    width: 1.2734px;
-    height: 1.2734px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.562);
-    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
+    transform: translateX(-10px);
 }
 
 .mercuryCircle {
@@ -43,14 +29,7 @@ Mars: About 6,779,000 meters 2. */
     border-radius: 50%;
     background-color: rgba(255, 64, 0, 0.562);
     box-shadow: 0 0 50px 10px rgba(255, 64, 0, 0.562);
-}
-
-.marsCircle {
-    width: .6779px;
-    height:.6779px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.562);
-    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+    transform: translateX(0);
 }
 
 .venusCircle {
@@ -59,4 +38,51 @@ Mars: About 6,779,000 meters 2. */
     border-radius: 50%;
     background-color: rgba(255, 0, 0, 0.562);
     box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+    transform: translateX(10px);
 }
+
+.earthCircle {
+    width: 1.2734px;
+    height: 1.2734px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
+    transform: translateX(20px);
+}
+
+.marsCircle {
+    width: .6779px;
+    height:.6779px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.562);
+    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+    transform: translateX(30px);
+}
+
+.zoom-container {
+    overflow: hidden;
+    width:23vw;
+    height:31vh;
+    /* width: 160%;
+    height: 28rem; */
+    border: 1px solid #cccccca9;
+    box-shadow: 0 0 10px 10px rgba(249, 249, 249, 0.128);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: auto; /* or scroll */
+}
+
+.zoom-content {
+    /* justify-items: center; */
+    /* transform-origin: 0 0;  Left align*/
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px
+}
+
