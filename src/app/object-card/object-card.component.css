@@ -6,6 +6,7 @@
     justify-content: left;
     align-items: center;
     overflow: hidden;
+    font-size: .8em;
 
 }
 
@@ -29,3 +30,14 @@
 mat-icon{
     margin: 0 .5em;
 }
+
+.name{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px;
+}
+/* 
+@media screen and (max-width: 1600px) {
+    .objectCard{
+        font-size: .6em;
+    }
+} */

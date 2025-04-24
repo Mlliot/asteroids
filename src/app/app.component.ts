@@ -8,11 +8,12 @@ import { ApiService } from './services/api.service';
 import { HeaderComponent } from "./header/header.component";
 import { ApodComponent } from "./apod/apod.component";
 import { MatIconModule } from '@angular/material/icon';
+import { FavoritesComponent } from "./favorites/favorites.component";
 import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, ObjectsComponent, FooterComponent, CommonModule, HeaderComponent, ApodComponent, MatIconModule],
+  imports: [CommonModule, RouterOutlet, ObjectsComponent, FooterComponent, CommonModule, HeaderComponent, ApodComponent, MatIconModule, FavoritesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

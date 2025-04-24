@@ -1,13 +1,28 @@
 
 <div class="fill">
     <div class="fillCard">
-        @for(object of neoData; track object){
-        <app-object-card (click)='setCurr(object)'>
-            <div name> {{object.name}} </div>
-            <div hazard> {{object.is_potentially_hazardous_asteroid}} </div>
-            <div id> {{object.id}} </div>
-            <!-- <div class="circle" [ngStyle]="getCircleSize(estimated)" ></div> -->
-        </app-object-card>
+        <div class="favoritesSelector">
+            <a class="selector" (click)="toggleFavOff()">Daily</a>
+            <a class="selector" (click)="toggleFavOn()">Favorites</a>
+        </div>
+        @if(!favoritesSelector){
+            @for(object of neoData; track object){
+                <app-object-card (click)='setCurr(object)'>
+                    <div name> {{object.name}} </div>
+                    <div hazard> {{object.is_potentially_hazardous_asteroid}} </div>
+                    <div id> {{object.id}} </div>
+                    <!-- <div class="circle" [ngStyle]="getCircleSize(estimated)" ></div> -->
+                </app-object-card>
+                }
+        } @else{
+            @for(object of favoritesList; track object.id){
+                <app-object-card (click)='setCurr(object)'>
+                    <div name> {{object.name}} </div>
+                    <div hazard> {{object.is_potentially_hazardous_asteroid}} </div>
+                    <div id> {{object.id}} </div>
+                    <!-- <div class="circle" [ngStyle]="getCircleSize(estimated)" ></div> -->
+                </app-object-card>
+            }
         }
     </div>
     <div class="fillCard">
@@ -35,7 +50,11 @@
                     <p class="smallText">Orbiting Body: </p>
                     {{defaultOrbiting()}}
                     <br>
-                    <button class="absolute2"(click)=navigateUrl(defaultUrl())>More Info</button>
+                    <!-- <button class="absolute2"(click)=navigateUrl(defaultUrl())>More Info</button> -->
+                    <div class="absolute2">
+                        <a class="button" [href]="defaultUrl()" target="_blank">More Info</a>
+                        <button class="button" (click)="addToFavorites()">Add to Favorites</button>
+                    </div>
                 </div>
             </div>
             <div class="nDataCard">
