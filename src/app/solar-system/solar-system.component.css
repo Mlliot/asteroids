@@ -6,20 +6,29 @@
     height: 100vh;
     width:100vw;
     color: aqua;
+    background-image: url('../../../public/space-background.jpg');
 }
 
-/* 12,734,000 meters  Actual diameter of Earth* Could Fact Check that*/
 /* Sun: Approximately 1,391,400,000 meters.
 Mercury: About 4,880,000 meters. */
 /* Venus: Approximately 12,104,000 meters 1.
-Mars: About 6,779,000 meters 2. */
+12,734,000 meters  Actual diameter of Earth
+Mars: About 6,779,000 meters 2.
+Jupiter: (142,984,000 meters)
+Saturn: (116,464,000 meters)
+Uranus:  (50,724,000 meters) 
+Neptune: (49,528,000 meters)
+Pluto:  (2,376,000 meters)
+*/
+
+/* Proportioned by / by 10,000,000 */
 
 .sunCircle {
     width: 139.14px;
     height: 139.14px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.562);
-    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.311);
+    background-color: rgb(255, 234, 0);
+    box-shadow: 0 0 50px 10px  rgb(255, 234, 0);
     transform: translateX(-10px);
 }
 
@@ -59,10 +68,52 @@ Mars: About 6,779,000 meters 2. */
     transform: translateX(30px);
 }
 
+.jupiterCircle {
+    width: 14.2984px;
+    height:14.2984px;
+    border-radius: 50%;
+    background-color: rgba(255, 123, 0, 0.909);
+    box-shadow: 0 0 50px 10px   rgba(255, 123, 0, 0.909);
+    transform: translateX(40px);
+}
+.saturnCircle {
+    width: 11.6464px;
+    height:11.6464px;
+    border-radius: 50%;
+    background-color: burlywood;
+    box-shadow: 0 0 50px 10px burlywood;
+    transform: translateX(50px);
+}
+.uranusCircle {
+    width: 5.0724px;
+    height: 5.0724px;
+    border-radius: 50%;
+    background-color: rgb(0, 242, 255);
+    box-shadow: 0 0 50px 10px rgb(0, 242, 255);
+    transform: translateX(60px);
+}
+.neptuneCircle {
+    width: 4.9528px;
+    height:4.9528px;
+    border-radius: 50%;
+    background-color: rgba(55, 0, 255, 0.562);
+    box-shadow: 0 0 50px 10px   rgba(55, 0, 255, 0.562);
+    transform: translateX(70px);
+}
+
+.plutoCircle {
+    width: .2376px;
+    height:.2376px;
+    border-radius: 50%;
+    background-color: rgba(233, 177, 246, 0.562);
+    box-shadow: 0 0 50px 10px   rgba(233, 177, 246, 0.562);
+    transform: translateX(80px);
+}
+
 .zoom-container {
     overflow: hidden;
-    width:23vw;
-    height:31vh;
+    width:28vw;
+    height:40vh;
     /* width: 160%;
     height: 28rem; */
     border: 1px solid #cccccca9;
@@ -72,6 +123,7 @@ Mars: About 6,779,000 meters 2. */
     align-items: center;
     position: relative;
     overflow-x: auto; /* or scroll */
+    background-color: black;
 }
 
 .zoom-content {

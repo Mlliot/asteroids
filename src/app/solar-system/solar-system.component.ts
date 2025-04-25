@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-solar-system',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './solar-system.component.css'
 })
 export class SolarSystemComponent {
+
 
   scale = 1
 
@@ -22,4 +23,6 @@ export class SolarSystemComponent {
     const zoomContent = document.querySelector('.zoom-content') as HTMLElement;
     zoomContent.style.transform = `scale(${this.scale})`;
   }
+
+
 }
