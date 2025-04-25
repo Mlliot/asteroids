@@ -4,7 +4,7 @@
     align-items: center;
     /*To center items in a container, container must have a height and width*/
     height: 100vh;
-    width:100vw;
+    width: 100vw;
     color: aqua;
     background-image: url('../../../public/space-background.jpg');
 }
@@ -28,7 +28,7 @@ Pluto:  (2,376,000 meters)
     height: 139.14px;
     border-radius: 50%;
     background-color: rgb(255, 234, 0);
-    box-shadow: 0 0 50px 10px  rgb(255, 234, 0);
+    box-shadow: 0 0 50px 10px rgb(255, 234, 0);
     transform: translateX(-10px);
 }
 
@@ -46,7 +46,7 @@ Pluto:  (2,376,000 meters)
     height: 1.2104px;
     border-radius: 50%;
     background-color: rgba(255, 0, 0, 0.562);
-    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 0, 0, 0.562);
     transform: translateX(10px);
 }
 
@@ -61,29 +61,31 @@ Pluto:  (2,376,000 meters)
 
 .marsCircle {
     width: .6779px;
-    height:.6779px;
+    height: .6779px;
     border-radius: 50%;
     background-color: rgba(255, 0, 0, 0.562);
-    box-shadow: 0 0 50px 10px  rgba(255, 0, 0, 0.562);
+    box-shadow: 0 0 50px 10px rgba(255, 0, 0, 0.562);
     transform: translateX(30px);
 }
 
 .jupiterCircle {
     width: 14.2984px;
-    height:14.2984px;
+    height: 14.2984px;
     border-radius: 50%;
     background-color: rgba(255, 123, 0, 0.909);
-    box-shadow: 0 0 50px 10px   rgba(255, 123, 0, 0.909);
+    box-shadow: 0 0 50px 10px rgba(255, 123, 0, 0.909);
     transform: translateX(40px);
 }
+
 .saturnCircle {
     width: 11.6464px;
-    height:11.6464px;
+    height: 11.6464px;
     border-radius: 50%;
     background-color: burlywood;
     box-shadow: 0 0 50px 10px burlywood;
     transform: translateX(50px);
 }
+
 .uranusCircle {
     width: 5.0724px;
     height: 5.0724px;
@@ -92,37 +94,39 @@ Pluto:  (2,376,000 meters)
     box-shadow: 0 0 50px 10px rgb(0, 242, 255);
     transform: translateX(60px);
 }
+
 .neptuneCircle {
     width: 4.9528px;
-    height:4.9528px;
+    height: 4.9528px;
     border-radius: 50%;
     background-color: rgba(55, 0, 255, 0.562);
-    box-shadow: 0 0 50px 10px   rgba(55, 0, 255, 0.562);
+    box-shadow: 0 0 50px 10px rgba(55, 0, 255, 0.562);
     transform: translateX(70px);
 }
 
 .plutoCircle {
     width: .2376px;
-    height:.2376px;
+    height: .2376px;
     border-radius: 50%;
     background-color: rgba(233, 177, 246, 0.562);
-    box-shadow: 0 0 50px 10px   rgba(233, 177, 246, 0.562);
+    box-shadow: 0 0 50px 10px rgba(233, 177, 246, 0.562);
     transform: translateX(80px);
 }
 
 .zoom-container {
     overflow: hidden;
-    width:28vw;
-    height:40vh;
+    width: 28vw;
+    height: 40vh;
     /* width: 160%;
     height: 28rem; */
     border: 1px solid #cccccca9;
-    box-shadow: 0 0 10px 10px rgba(249, 249, 249, 0.128);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.128);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow-x: auto; /* or scroll */
+    overflow-x: auto;
+    /* or scroll */
     background-color: black;
 }
 
@@ -131,10 +135,104 @@ Pluto:  (2,376,000 meters)
     /* transform-origin: 0 0;  Left align*/
     transform-origin: center center;
     transition: transform 0.2s ease;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap:20px
+    gap: 20px
 }
 
+
+.circle {
+    transform: translate(-790px, 90px);
+    width: .3%;
+    height: .6%;
+    background-color: rgb(43, 32, 32);
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 3s infinite;
+}
+
+.circle2 {
+    transform: translate(890px, 190px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 6s infinite;
+}
+
+.circle3 {
+    transform: translate(-390px, 590px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 3s infinite;
+}
+
+.circle4 {
+    transform: translate(-490px, -190px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 12s infinite;
+}
+
+.circle5 {
+    transform: translate(500px, 490px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 6s infinite;
+}
+
+.circle6 {
+    transform: translate(1400px, 50px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 3s infinite;
+}
+
+.circle7 {
+    transform: translate(1000px, -300px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 6s infinite;
+}
+
+.circle8 {
+    transform: translate(100px, -330px);
+    width: .3%;
+    height: .6%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 8px rgba(181, 208, 230, 0.5);
+    animation: glisten 3s infinite;
+}
+
+@keyframes glisten {
+
+    0%,
+    100% {
+        box-shadow: 0px 0px 0px 0px rgba(181, 208, 230, 0.5);
+        background-color: black;
+    }
+
+    50% {
+        background-color: rgb(226, 226, 224);
+        box-shadow: 0px 0px 10px 2px rgba(181, 208, 230, 0.5);
+    }
+}
