@@ -6,4 +6,5 @@ export const routes: Routes = [
     { path: 'object', component: ObjectsComponent }, // default route
     { path: 'solar', component: SolarSystemComponent },
     { path: '', redirectTo: 'object', pathMatch: 'full' }, // redirect empty path to 'object'
+    { path: "**", redirectTo: 'object', pathMatch: 'full'},
 ];

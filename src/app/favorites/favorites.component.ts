@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FavoritesService } from '../services/favorites.service';
 import { Neo } from '../services/neo';
 import { ObjectCardComponent } from "../object-card/object-card.component";
+// import { style, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 
 @Component({
   selector: 'app-favorites',

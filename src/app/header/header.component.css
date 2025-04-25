@@ -38,15 +38,12 @@ h1 {
 }
 
 .menu-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 2vh;
+    left: 15vw;
+    font-size: larger;
+    transform: scale(2);
     cursor: pointer;
-    border-color: transparent;
-    margin-bottom: 15px;
 }
 
 .modal {
@@ -69,32 +66,38 @@ h1 {
     left: -0;
 }
 
-#modalDescription {
+.modalDescContainer{
+    margin: 20vh 0;
+}
+
+.modalDescription {
     display: flex;
-    position: relative;
-   transform: translateY(200px);
-   color: antiquewhite;
-   z-index: 2;
+   top: 1em;
+   color: rgb(255, 255, 255);
+   color:rgb(255, 255, 255);
+   padding:  .2em 20%;
+   font-size: 150%;
+   overflow: hidden;
 }
 
-#modalDescription a{
-    color:rgb(255, 255, 255)
+a{
+    color: inherit;
 }
 
-#modalDescription a:hover{
-    color: rgb(255, 173, 32);
+a:hover{
+    color: rgba(255, 255, 255, 0.76);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 48px;
-    font-weight: bold;
+    transform: scale(2);
+    position: absolute;
+    right: 1em;
+    top: 1.5em;
 }
 
 .close:hover,
 .close:focus {
-    color: rgb(255, 173, 32);
+    color: rgba(255, 0, 0, 0.815);
     text-decoration: none;
     cursor: pointer;
 }

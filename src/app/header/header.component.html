@@ -1,18 +1,19 @@
 <div class="header coloredBackground absolute"><h1>Nasa Near Earth Objects</h1></div>
 <div class='logo'>
-    <button (click)="navigatePage()" id="menu-button" class="menu-button">
-        <span class="material-symbols-outlined">
-            menu
-        </span>
-        </button>
+    <a (click)="navigatePage()" class="menu-button">
+            <mat-icon>subject</mat-icon>
+    </a>
 </div>
 <!-- Popout Screen for menu-->
 <div id="myModal" class="modal" [ngClass]="{'active': isActive}">
+    <mat-icon (click)="navigatePage()" class="close">close</mat-icon>
     <div class="modal-content">
-        <span (click)="navigatePage()" id="close" class="close">&times;</span>
-        <p id="modalDescription" *ngFor="let link of links">
-            <a [routerLink]="link.url" >{{ link.text }}</a>
-        </p>
+        <!-- <span (click)="navigatePage()" id="close" class="close">&times;</span> -->
+        <div class="modalDescContainer">
+            <p (click)="navigatePage()"class="modalDescription" *ngFor="let link of links">
+                <a [routerLink]="link.url">{{ link.text }}</a>
+            </p>
+        </div>
     </div>
 </div>
 <!-- @if(about){

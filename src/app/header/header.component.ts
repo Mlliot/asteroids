@@ -4,10 +4,11 @@ import { AboutDirective } from '../about.directive';
 import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { MatRipple, MatRippleModule } from '@angular/material/core'
 
 @Component({
   selector: 'app-header',
-  imports: [MatIconModule, CommonModule, RouterLink],
+  imports: [MatIconModule, CommonModule, RouterLink, MatRippleModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit{
     { text: 'Info', url: '/info' },
     { text: 'Space', url: '/space' },
     { text: 'Settings', url: '/settings' },
-    { text: 'Mars Rover', url: '/mars-rover' },
+    { text: 'Home', url: 'object' },
   ];
 
   ngOnInit(): void {
@@ -32,5 +33,7 @@ export class HeaderComponent implements OnInit{
   navigatePage() {
       this.isActive = !this.isActive
   }
+
+  
 
 }
